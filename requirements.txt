@@ -1,0 +1,15 @@
+fastapi==0.104.1
+pydantic==2.4.2
+uvicorn[standard]
+alembic==1.12.0
+SQLAlchemy==2.0.20
+psycopg2==2.9.7
+email-validator==2.0.0.post2
+cryptography==41.0.4
+jwcrypto==1.5.0
+bcrypt==4.0.1
+requests==2.31.0
+boto3==1.28.40
+pymongo==4.5.0
+segno==1.5.3
+fpdf==1.7.2

@@ -1,0 +1,8 @@
+.vscode
+__pycache__
+venv
+app/uploads/*
+!app/uploads/__init__.py
+.python-version
+ub-env
+*.zip

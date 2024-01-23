@@ -10,7 +10,7 @@ from typing import Optional
 from uuid import uuid4
 
 import boto3
-from datauri import DataURI
+# from datauri import DataURI
 from datauri.exceptions import InvalidDataURI
 from fastapi import HTTPException, status
 from sqlalchemy import desc, inspect, or_
@@ -56,40 +56,40 @@ def create_hash(key: str) -> str:
     return key
 
 
-def my_logo(data_uri=""):
-    try:
-        uri = DataURI(data_uri)
-    except InvalidDataURI:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid DataURI."
-        )
-    mime_type = uri.mimetype
-    file_extension = guess_extension(mime_type)
-    # Use the generated UUID for creating the file path
-    generated_uuid = generate_id()
-    file_path = os.path.join("app", "uploads", generated_uuid + file_extension)
+# def my_logo(data_uri=""):
+#     try:
+#         uri = DataURI(data_uri)
+#     except InvalidDataURI:
+#         raise HTTPException(
+#             status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid DataURI."
+#         )
+#     mime_type = uri.mimetype
+#     file_extension = guess_extension(mime_type)
+#     # Use the generated UUID for creating the file path
+#     generated_uuid = generate_id()
+#     file_path = os.path.join("app", "uploads", generated_uuid + file_extension)
 
-    # Use the 'file_path' to open and write the image data
-    with open(file_path, "wb") as fd:
-        fd.write(uri.data)
+#     # Use the 'file_path' to open and write the image data
+#     with open(file_path, "wb") as fd:
+#         fd.write(uri.data)
 
-    return file_extension, generated_uuid, file_path
+#     return file_extension, generated_uuid, file_path
 
 
-def upload_file_using_resource(file_path, generated_uuid, file_extension):
-    s3 = boto3.resource("s3")
-    object_name = f"assets/{generated_uuid}{file_extension}"
-    try:
-        bucket = s3.Bucket(BUCKET_NAME)
-        bucket.upload_file(file_path, object_name)
-    except Exception as e:
-        print(e)
-        print(traceback.format_exc())
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Image upload failed.",
-        )
-    return object_name
+# def upload_file_using_resource(file_path, generated_uuid, file_extension):
+#     s3 = boto3.resource("s3")
+#     object_name = f"assets/{generated_uuid}{file_extension}"
+#     try:
+#         bucket = s3.Bucket(BUCKET_NAME)
+#         bucket.upload_file(file_path, object_name)
+#     except Exception as e:
+#         print(e)
+#         print(traceback.format_exc())
+#         raise HTTPException(
+#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+#             detail="Image upload failed.",
+#         )
+#     return object_name
 
 
 def list_data(

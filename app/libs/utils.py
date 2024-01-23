@@ -11,7 +11,7 @@ from uuid import uuid4
 
 import boto3
 # from datauri import DataURI
-from datauri.exceptions import InvalidDataURI
+# from datauri.exceptions import InvalidDataURI
 from fastapi import HTTPException, status
 from sqlalchemy import desc, inspect, or_
 from sqlalchemy.orm import Session

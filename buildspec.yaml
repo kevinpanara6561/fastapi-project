@@ -1,6 +1,6 @@
 version: 0.2
 run-as: root
- 
+
 phases:
   pre_build:
     commands:
@@ -10,14 +10,14 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image...          
+      - echo Building the Docker image...
       - docker build -t project_repo .
-      - docker tag project_repo:latest 992382410569.dkr.ecr.ap-south-1.amazonaws.com/project_repo:latest
+      - docker tag project_repo:latest $REPOSITORY_URI:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 992382410569.dkr.ecr.ap-south-1.amazonaws.com/project_repo:latest
+      - docker push $REPOSITORY_URI:latest
       - echo Writing image definitions file...
 artifacts:
     files: imagedefinitions.json

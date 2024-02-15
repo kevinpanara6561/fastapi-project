@@ -1,15 +1,23 @@
 version: 0.2
-
+run-as: root
+ 
 phases:
-  install:
-    runtime-versions:
-      python: 3.8
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 992382410569.dkr.ecr.ap-south-1.amazonaws.com
+      - REPOSITORY_URI=992382410569.dkr.ecr.ap-south-1.amazonaws.com/project_repo
   build:
     commands:
-      - pip install -r requirements.txt # Install project dependencies
-      # - pytest tests/                   # Run unit tests
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - docker build -t project_repo .
+      - docker tag project_repo:latest 992382410569.dkr.ecr.ap-south-1.amazonaws.com/project_repo:latest
   post_build:
     commands:
-      echo "Post build"
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 992382410569.dkr.ecr.ap-south-1.amazonaws.com/project_repo:latest
+      - echo Writing image definitions file...
 artifacts:
-  files: "**/*" # This depends on your project structure
+    files: imagedefinitions.json

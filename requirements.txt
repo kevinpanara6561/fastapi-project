@@ -13,3 +13,4 @@ boto3==1.28.40
 pymongo==4.5.0
 segno==1.5.3
 fpdf==1.7.2
+PyMySQL==1.0.2

@@ -16,8 +16,5 @@ COPY ./app/ /app/
 # Expose port 8000 (Note: This is for documentation purposes, actual port binding is done when running the container)
 EXPOSE 8000
 
-# Set the working directory to /app
-WORKDIR /app
-
 # Command to run the FastAPI application using Uvicorn
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

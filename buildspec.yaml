@@ -5,19 +5,19 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 992382410569.dkr.ecr.ap-south-1.amazonaws.com
-      - REPOSITORY_URI=992382410569.dkr.ecr.ap-south-1.amazonaws.com/project_repo
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 066593297241.dkr.ecr.ap-south-1.amazonaws.com
+      # - REPOSITORY_URI=992382410569.dkr.ecr.ap-south-1.amazonaws.com/project_repo
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t project_repo .
-      - docker tag project_repo:latest 992382410569.dkr.ecr.ap-south-1.amazonaws.com/project_repo:latest
+      - docker build -t fastapi_pipeline .
+      - docker tag fastapi_pipeline:latest 066593297241.dkr.ecr.ap-south-1.amazonaws.com/fastapi_pipeline:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 992382410569.dkr.ecr.ap-south-1.amazonaws.com/project_repo:latest
+      - docker push 066593297241.dkr.ecr.ap-south-1.amazonaws.com/fastapi_pipeline:latest
       - echo Writing image definitions file...
 # artifacts:
 #     files: imagedefinitions.json

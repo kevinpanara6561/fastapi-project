@@ -55,6 +55,8 @@ def create_fake_role():
 # Add similar functions for other models
 
 
+
+
 def seed_data():
     # Seed Admin Users
     admin_users = [create_fake_admin_user() for _ in range(10)]

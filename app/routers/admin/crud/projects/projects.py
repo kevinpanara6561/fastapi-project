@@ -92,7 +92,7 @@ def update_project(db: Session, project_id: str, request: ProjectAdd):
     project.start_date = request.start_date
     project.end_date = request.end_date
     project.manager_id = request.manager_id
-    project.update_at = now()
+    project.updated_at = now()
 
     db.commit()
     db.refresh(project)

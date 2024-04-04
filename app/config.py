@@ -13,8 +13,8 @@ from fastapi import HTTPException, status
 # BUCKET_NAME = os.environ.get("PRO_BUCKET_NAME")
 
 DB_HOST = "localhost"
-DB_USER = "admin"
-DB_PASSWORD = "admin"
+DB_USER = "root"
+DB_PASSWORD = "root"
 DB_NAME = "projectx"
 JWT_KEY = '{"k":"xuQvsl68aTATKRhHjBYo1msJckIJqAj9PooXELeojpY","kty":"oct"}'
 RE_CAPTCHA_SECRET = os.environ.get("PRO_RE_CAPTCHA_SECRET")

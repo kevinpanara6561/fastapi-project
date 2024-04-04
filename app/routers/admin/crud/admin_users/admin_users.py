@@ -52,7 +52,7 @@ def verify_token(db: Session, token: str):
     else:
         try:
             key = jwk.JWK(**JWT_KEY)
-            ET = jwt.JWT(key=key, jwt=token, expected_type="JWE")
+            ET = jwt.JWT(key=key, jwt=token)
             ST = jwt.JWT(key=key, jwt=ET.claims)
             claims = ST.claims
             claims = json.loads(claims)

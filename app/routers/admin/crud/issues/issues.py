@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.libs.constants import ISSUE_NOT_FOUND, TASK_NOT_FOUND
 from app.libs.utils import generate_id, list_data, now
-from app.models import IssueModel, IssueStatusEnum, IssueUserModel
+from app.models.issues import IssueModel, IssueStatusEnum, IssueUserModel
 from app.routers.admin.crud.admin_users.admin_users import get_admin_user
 from app.routers.admin.crud.tasks.tasks import get_task
 from app.routers.admin.schemas import IssueAdd, IssueUser, IssueUserAssign

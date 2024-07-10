@@ -1,7 +1,7 @@
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
-from app.models import AdminUserRoleModel, OperationModel, RoleModel, RoleOperationModel
+from app.models.auth import AdminUserRoleModel, OperationModel, RoleModel, RoleOperationModel
 from app.routers.admin.crud.admin_users.admin_users import is_super_admin
 
 

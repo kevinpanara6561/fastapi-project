@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.libs.constants import ADMIN_USER_NOT_FOUND, PROJECT_NOT_FOUND
 from app.libs.utils import generate_id, list_data, now
-from app.models import ProjectModel, ProjectUserModel
+from app.models.projects import ProjectModel, ProjectUserModel
 from app.routers.admin.crud.admin_users.admin_users import get_admin_user
 from app.routers.admin.schemas import (
     ProjectAdd,

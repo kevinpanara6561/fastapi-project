@@ -44,3 +44,15 @@ class IssueModel(Base):
     updated_at = Column(DateTime, nullable=False, default=datetime.now)
 
     task = relationship("TaskModel", backref="issue")
+    
+class IssueUserModel(Base):
+    __tablename__ = "issue_users"
+
+    id = Column(String(36), primary_key=True)
+    issue_id = Column(String(36), ForeignKey("issues.id"), nullable=False)
+    admin_user_id = Column(String(36), ForeignKey("admin_users.id"), nullable=False)
+    created_at = Column(DateTime, nullable=False, default=datetime.now)
+    updated_at = Column(DateTime, nullable=False, default=datetime.now)
+
+    issue = relationship("IssueModel", backref="issue_user")
+    admin_user = relationship("AdminUserModel", backref="issue_user")

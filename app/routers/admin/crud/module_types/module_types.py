@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.libs.constants import MODULE_TYPE_NOT_FOUND
 from app.libs.utils import generate_id, list_data, now
-from app.models import ModuleTypeModel
+from app.models.modules import ModuleTypeModel
 from app.routers.admin.schemas import ModuleTypeAdd
 
 

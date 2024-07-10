@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.libs.constants import ROLE_NOT_FOUND
 from app.libs.utils import generate_id, now
-from app.models import OperationModel, RoleModel, RoleOperationModel
+from app.models.auth import OperationModel, RoleModel, RoleOperationModel
 from app.routers.admin.crud.operations.operations import get_operation
 from app.routers.admin.schemas import OperationMaster, RoleAdd
 

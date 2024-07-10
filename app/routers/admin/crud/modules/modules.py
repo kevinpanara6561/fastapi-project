@@ -9,7 +9,7 @@ from app.libs.constants import (
     PROJECT_NOT_FOUND,
 )
 from app.libs.utils import generate_id, list_data, now
-from app.models import ModuleModel
+from app.models.modules import ModuleModel
 from app.routers.admin.crud.module_types.module_types import get_module_type
 from app.routers.admin.crud.projects.projects import get_project
 from app.routers.admin.schemas import ModuleAdd

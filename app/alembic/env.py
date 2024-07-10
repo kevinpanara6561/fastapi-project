@@ -27,7 +27,7 @@ fileConfig(config.config_file_name)
 # target_metadata = mymodel.Base.metadata
 
 # ---------------- added code here -------------------------#
-from app import models
+from app.models import models
 
 # ------------------------------------------------------------#
 

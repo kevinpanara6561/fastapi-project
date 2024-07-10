@@ -12,7 +12,7 @@ from app.config import JWT_KEY
 from app.libs.emails import send_email
 from app.libs.recaptcha import verify_captcha
 from app.libs.utils import date_time_diff_min, generate_id, generate_otp, now
-from app.models import AdminUserModel, AdminUserOtpModel, AdminUserRoleModel, RoleModel
+from app.models.auth import AdminUserModel, AdminUserOtpModel, AdminUserRoleModel, RoleModel
 from app.routers.admin.crud.common.email_templates import forgot_password
 from app.routers.admin.schemas import (
     AdminUserAdd,

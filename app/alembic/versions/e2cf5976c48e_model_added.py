@@ -9,7 +9,7 @@ import sqlalchemy as sa
 from alembic import op
 
 from app.libs.utils import generate_id
-from app.models import AdminUserModel, AdminUserRoleModel, OperationModel, RoleModel
+from app.models.auth import AdminUserModel, AdminUserRoleModel, OperationModel, RoleModel
 from app.routers.admin.crud.admin_users.admin_users import create_password
 from app.seeds import data
 

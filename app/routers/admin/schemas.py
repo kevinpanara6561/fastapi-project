@@ -7,12 +7,14 @@ from email_validator import EmailNotValidError, validate_email
 from fastapi import HTTPException, status
 from pydantic import BaseModel, ConfigDict, Field, validator
 
-from app.models import (
+from app.models.issues.models import (
     IssuePriorityEnum,
     IssueStatusEnum,
-    ProjectStatusEnum,
-    TaskStatusEnum,
 )
+from app.models.projects.models import ProjectStatusEnum
+from app.models.tasks.models import TaskStatusEnum
+from app.models.issues.models import IssuePriorityEnum
+from app.libs.utils import now
 
 
 class AdminUserChangePassword(BaseModel):

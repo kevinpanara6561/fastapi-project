@@ -14,7 +14,7 @@ from fastapi import HTTPException, status
 
 DB_HOST = "localhost"
 DB_USER = "root"
-DB_PASSWORD = "root"
+DB_PASSWORD = ""
 DB_NAME = "projectx"
 JWT_KEY = '{"k":"xuQvsl68aTATKRhHjBYo1msJckIJqAj9PooXELeojpY","kty":"oct"}'
 RE_CAPTCHA_SECRET = os.environ.get("PRO_RE_CAPTCHA_SECRET")

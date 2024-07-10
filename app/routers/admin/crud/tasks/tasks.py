@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.libs.constants import MODULE_NOT_FOUND, TASK_NOT_FOUND
 from app.libs.utils import generate_id, list_data
-from app.models import TaskModel
+from app.models.tasks import TaskModel
 from app.routers.admin.crud.module_types.module_types import get_module_type
 from app.routers.admin.crud.modules.modules import get_module
 from app.routers.admin.crud.projects.projects import get_project
